@@ -1,0 +1,8 @@
+# Directories to Ignore:
+/.vagrant
+/www/**
+!/www/default
+!/www/default/**
+
+# Files to Ignore:
+# nothing yet!
