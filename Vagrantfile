@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
     config.vm.box = "ubuntu/vivid64"
 
     # host to guest port forwarding
-    config.vm.network :forwarded_port, guest: 80, host: 8080
+    config.vm.network :forwarded_port, guest: 8080, host: 8080
 
     # settings for VirtualBox provider
     config.vm.provider "virtualbox" do |v|
@@ -25,4 +25,7 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
     config.vm.provider "vmware_fusion" do |v|
         v.vmx["memsize"] = MAX_MEMORY
     end
+
+    # call provisioning shell scripts
+    config.vm.provision :shell, path: "./provision.sh"
 end
